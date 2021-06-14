@@ -87,7 +87,7 @@ The following table lists the SQL Server versions that are supported for the App
 <tbody>
 <tr class="even">
 <td align="left"><p>Microsoft SQL Server 2019</p></td>
-<td align="left"><p></p></td>
+<td align="left"><p>CU4</p></td>
 <td align="left"><p>32-bit or 64-bit</p></td>
 </tr>
 
@@ -184,26 +184,31 @@ The following table lists the SQL Server versions that are supported for the App
 </thead>
 <tbody>
 <tr class="odd">
+<td align="left"><p>Microsoft SQL Server 2019</p></td>
+<td align="left"><p>CU4</p></td>
+<td align="left"><p>32-bit or 64-bit</p></td>
+</tr>
+<tr class="even">
 <td align="left"><p>Microsoft SQL Server 2017</p></td>
 <td align="left"><p></p></td>
 <td align="left"><p>32-bit or 64-bit</p></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><p>Microsoft SQL Server 2016</p></td>
 <td align="left"><p>SP2</p></td>
 <td align="left"><p>32-bit or 64-bit</p></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><p>Microsoft SQL Server 2014</p></td>
 <td align="left"><p>SP2</p></td>
 <td align="left"><p>32-bit or 64-bit</p></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left"><p>Microsoft SQL Server 2012</p></td>
 <td align="left"><p>SP2</p></td>
 <td align="left"><p>32-bit or 64-bit</p></td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left"><p>Microsoft SQL Server 2008 R2</p></td>
 <td align="left"><p>SP3</p></td>
 <td align="left"><p>32-bit or 64-bit</p></td>
