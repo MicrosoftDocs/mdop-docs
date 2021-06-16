@@ -9,13 +9,13 @@ ms.prod: w10
 ms.localizationpriority: Normal
 --- 
 
-# Upgrade from MBAM 2.5 to MBAM 2.5 SP1 Servicing Release Update
+# Upgrade (MBAM 2.5 to MBAM 2.5 SP1) or (MBAM 2.5 SP1 to MDOP MBAM Servicing Release Updates)
 
 This article provides step-by-step instructions to upgrade Microsoft BitLocker Administration and Monitoring (MBAM) 2.5 to MBAM 2.5 Service Pack 1 (SP1) together with the [Microsoft Desktop Optimization Pack (MDOP) May 2019 servicing update](https://support.microsoft.com/help/4505175/may-2019-servicing-release-for-microsoft-desktop-optimization-pack) in a standalone configuration.
 
 In this guide, we will use a two-server configuration. One server will be a database server that's running Microsoft SQL Server 2016. This server will host the MBAM databases and reports. The other server will be a Windows Server 2012 R2 web server. This server will host "Administration and Monitoring" and "Self-Service Portal."
 
-## Prepare to upgrade MBAM 2.5 SP1
+## Prepare to upgrade MBAM 2.5.x Infratructure
 
 ### Know the MBAM servers in your environment
 
@@ -36,7 +36,9 @@ In this guide, we will use a two-server configuration. One server will be a data
 
     > [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RE3ALdZ]
 
-## Upgrade the MBAM infrastructure to the latest version available
+## Upgrade the MBAM infrastructure to the latest version available.
+
+Latest Version as of March 2021 : v2.5.1152.0 ([October 2020 servicing release for Microsoft Desktop Optimization Pack](https://support.microsoft.com/en-us/topic/october-2020-servicing-release-for-microsoft-desktop-optimization-pack-9c509089-51d3-0877-15c5-04b83313b7c9))
 
 MBAM Server infrastructure installation or upgrade is always performed in the order listed below:
 
