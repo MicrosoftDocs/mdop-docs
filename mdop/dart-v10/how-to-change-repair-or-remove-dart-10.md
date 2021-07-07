@@ -10,36 +10,25 @@ ms.pagetype: mdop
 ms.mktglfcycl: support
 ms.sitesec: library
 ms.prod: w10
-ms.date: 06/16/2016
+ms.date: 04/20/2021
 ---
-
 
 # How to Change, Repair, or Remove DaRT 10
 
-
 You can change, repair, or remove the Microsoft Diagnostics and Recovery Toolset (DaRT) 10 installation by double-clicking the DaRT 10 installation file and then clicking the button that corresponds to the action that you want to perform.
 
-You can also change, repair, or remove the DaRT installation using the Windows Control Panel by completing the following steps.
+You can also change, repair, or remove the DaRT installation using the Apps and Features by completing the following steps.
 
 ## To change, repair, or remove DaRT
 
+1. Right-click on the **Start** button, or press the Windows+X key combination.
 
-1.  Click **Start**, and then click **Control Panel**.
+2. From the context menu that appears, select **Apps and Features**.
 
-2.  On **Control Panel**, navigate to the feature that lets you uninstall programs.
+3. Find **Microsoft Diagnostics and Recovery Toolset 10** in the list and click on it.
 
-3.  Click **Microsoft Diagnostics and Recovery Toolset 10**, and then click the button that corresponds to the action that you want to perform.
+4. Click the button that corresponds to the action that you want to perform. ("Modify" or "Remove")
 
 ## Related topics
 
-
-[Deploying DaRT 10 to Administrator Computers](deploying-dart-10-to-administrator-computers.md)
-
- 
-
- 
-
-
-
-
-
+- [Deploying DaRT 10 to Administrator Computers](deploying-dart-10-to-administrator-computers.md)

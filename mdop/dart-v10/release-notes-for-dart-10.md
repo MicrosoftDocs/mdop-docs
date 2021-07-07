@@ -13,9 +13,7 @@ ms.prod: w10
 ms.date: 06/16/2016
 ---
 
-
 # Release Notes for DaRT 10
-
 
 **To search these release notes, press CTRL+F.**
 
@@ -24,7 +22,6 @@ Read these release notes thoroughly before you install Microsoft Diagnostics and
 These release notes contain information that is required to successfully install Diagnostics and Recovery Toolset 10. The release notes also contain information that is not available in the product documentation. If there is a difference between these release notes and other DaRT documentation, the latest change should be considered authoritative. These release notes supersede the content that is included with this product.
 
 ## Known issues with DaRT 10
-
 
 ### Disk Commander is unable to repair a corrupt master boot record in a physical partition in Windows 10
 
@@ -56,7 +53,7 @@ If you start and then close Locksmith Wizard or tools in Computer Management, Sy
 
 **Workaround:** Close and restart DaRT, and then start System File Checker.
 
-### <a href="" id="-------------dart-installer-does-not-fail-when-the-windows-assessment-and-deployment-kit-is-not-installed"></a> DaRT installer does not fail when the Windows Assessment and Deployment Kit is not installed
+### DaRT installer does not fail when the Windows Assessment and Deployment Kit is not installed
 
 If you install DaRT 10 by using the command line to run the Windows Installer (.msi), and the Windows Assessment and Deployment Kit (Windows ADK) has not been installed, the DaRT installation should fail. Currently, the DaRT 10 installer installs all components except the DaRT recovery image.
 
@@ -64,14 +61,4 @@ If you install DaRT 10 by using the command line to run the Windows Installer (.
 
 ## Related topics
 
-
-[About DaRT 10](about-dart-10.md)
-
- 
-
- 
-
-
-
-
-
+- [About DaRT 10](about-dart-10.md)

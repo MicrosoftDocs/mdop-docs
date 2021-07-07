@@ -10,39 +10,32 @@ ms.pagetype: mdop
 ms.mktglfcycl: support
 ms.sitesec: library
 ms.prod: w10
-ms.date: 08/30/2016
+ms.date: 04/20/2021
 ---
 
-
 # How to Recover Remote Computers by Using the DaRT Recovery Image
-
 
 Use the Remote Connection feature in Microsoft Diagnostics and Recovery Toolset (DaRT) 10 to run the DaRT tools remotely on an end-user computer. After the end user provides the administrator or help desk worker with certain information, the IT administrator or help desk worker can take control of the end user's computer and run the necessary DaRT tools remotely.
 
 If you disabled the DaRT tools when you created the recovery image, you still have access to all of the tools. All of the tools, except Remote Connection, are unavailable to end users.
 
-**To recover a remote computer by using the DaRT recovery image**
+## To recover a remote computer
 
-1.  Boot an end-user computer by using the DaRT recovery image.
+1. Boot an end-user computer by using the DaRT recovery image.
 
     You will typically use one of the following methods to boot into DaRT to recover a remote computer, depending on how you deploy the DaRT recovery image. For more information about deploying the DaRT recovery image, see [Deploying DaRT 10](deploying-dart-10.md).
 
-    -   Boot into DaRT from a recovery partition on the problem computer.
-
-    -   Boot into DaRT from a remote partition on the network.
+    - Boot into DaRT from a recovery partition on the problem computer.
+    - Boot into DaRT from a remote partition on the network.
 
     For information about the advantages and disadvantages of each method, see [Planning How to Save and Deploy the DaRT 10 Recovery Image](planning-how-to-save-and-deploy-the-dart-10-recovery-image.md).
 
     Whichever method that you use to boot into DaRT, you must enable the boot device in the BIOS for the boot option or options that you want to make available to the end user.
 
-    **Note**  
-    Configuring the BIOS is unique, depending on the kind of hard disk drive, network adapters, and other hardware that is used in your organization.
+    > [!NOTE]
+    > Configuring the BIOS is unique, depending on the kind of hard disk drive, network adapters, and other hardware that is used in your organization.
 
-
-
-~~~
-As the computer is booting into the DaRT recovery image, the **NetStart** dialog box appears.
-~~~
+    As the computer is booting into the DaRT recovery image, the **NetStart** dialog box appears.
 
 2. When you are asked whether you want to initialize network services, select one of the following:
 
@@ -58,16 +51,13 @@ As the computer is booting into the DaRT recovery image, the **NetStart** dialog
 
 6. Select the installation that you want to repair or diagnose, and then click **Next**.
 
-   **Note**  
-   If the Windows Recovery Environment (WinRE) detects or suspects that Windows 10 did not start correctly the last time that it was tried, **Startup Repair** might start to run automatically. For information about how to resolve this issue, see [Troubleshooting DaRT 10](troubleshooting-dart-10.md).
+    The **System Recovery Options** window appears and lists various recovery tools.
 
+    > [!NOTE]
+    > If the Windows Recovery Environment (WinRE) detects or suspects that Windows 10 did not start correctly the last time that it was tried, **Startup Repair** might start to run automatically. For information about how to resolve this issue, see [Troubleshooting DaRT 10](troubleshooting-dart-10.md).
 
-
-~~~
-If any of the registry hives are corrupted or missing, Registry Editor and several other DaRT utilities will have limited functionality. If no operating system is selected, some tools will not be available.
-
-The **System Recovery Options** window appears and lists various recovery tools.
-~~~
+    > [!IMPORTANT]
+    > If any of the registry hives are corrupted or missing, Registry Editor and several other DaRT utilities will have limited functionality. If no operating system is selected, some tools will not be available.
 
 7. On the **System Recovery Options** window, click **Microsoft Diagnostics and Recovery Toolset** to open the **Diagnostics and Recovery Toolset**.
 
@@ -81,127 +71,94 @@ The **System Recovery Options** window appears and lists various recovery tools.
 
 11. In the **DaRT Remote Connection** window, enter the required ticket, IP address, and port information.
 
-   **Note**  
-   This information is created on the end-user computer and must be provided by the end user. There might be multiple IP addresses to choose from, depending on how many are available on the end-user computer.
-
-
+    > [!NOTE]
+    > This information is created on the end-user computer and must be provided by the end user. There might be multiple IP addresses to choose from, depending on how many are available on the end-user computer.
 
 12. Click **Connect**.
 
 The IT administrator now assumes control of the end-user computer and can run the DaRT tools remotely.
 
-**Note**  
-A file is provided that is named inv32.xml and contains remote connection information, such as the port number and IP address. By default, the file is typically located at %windir%\\system32.
+> [!NOTE]
+> A file is provided that is named inv32.xml and contains remote connection information, such as the port number and IP address. By default, the file is typically located at `%windir%\system32`.
 
+## To customize the Remote Connection process
 
+You can customize the Remote Connection process by editing the `winpeshl.ini` file. For more information about how to edit the `winpeshl.ini` file, see [Winpeshl.ini Files](https://go.microsoft.com/fwlink/?LinkId=219413).
 
-**To customize the Remote Connection process**
+Specify the following commands and parameters to customize how a remote connection is established with an end-user computer:
 
-1. You can customize the Remote Connection process by editing the winpeshl.ini file. For more information about how to edit the winpeshl.ini file, see [Winpeshl.ini Files](https://go.microsoft.com/fwlink/?LinkId=219413).
+<table>
+<thead>
+<tr class="header">
+<th>Command</th>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>RemoteRecovery.exe</td>
+<td style="white-space:pre">-nomessage</td>
+<td>Specifies that the confirmation prompt is not displayed. <strong>Remote Connection</strong> continues just as if the end user had responded &quot;Yes&quot; to the confirmation prompt.</td>
+</tr>
+<tr class="even">
+<td>WaitForConnection.exe</td>
+<td>none</td>
+<td>Prevents a custom script from continuing until either <strong>Remote Connection</strong> is not running or a valid connection is established with the end-user computer.
 
-   Specify the following commands and parameters to customize how a remote connection is established with an end-user computer:
+> [!IMPORTANT]
+> This command serves no function if it is specified independently. It must be specified in a script to function correctly.
 
-   <table>
-   <colgroup>
-   <col width="33%" />
-   <col width="33%" />
-   <col width="33%" />
-   </colgroup>
-   <thead>
-   <tr class="header">
-   <th align="left">Command</th>
-   <th align="left">Parameter</th>
-   <th align="left">Description</th>
-   </tr>
-   </thead>
-   <tbody>
-   <tr class="odd">
-   <td align="left"><p><strong>RemoteRecovery.exe</strong></p></td>
-   <td align="left"><p>-nomessage</p></td>
-   <td align="left"><p>Specifies that the confirmation prompt is not displayed. <strong>Remote Connection</strong> continues just as if the end user had responded &quot;Yes&quot; to the confirmation prompt.</p></td>
-   </tr>
-   <tr class="even">
-   <td align="left"><p><strong>WaitForConnection.exe</strong></p></td>
-   <td align="left"><p>none</p></td>
-   <td align="left"><p>Prevents a custom script from continuing until either <strong>Remote Connection</strong> is not running or a valid connection is established with the end-user computer.</p>
-   <div class="alert">
-   <strong>Important</strong><br/><p>This command serves no function if it is specified independently. It must be specified in a script to function correctly.</p>
-   </div>
-   <div>
+</td>
+</tr>
+</tbody>
+</table>
 
-   </div></td>
-   </tr>
-   </tbody>
-   </table>
+The following is an example of a winpeshl.ini file that is customized to open the **Remote Connection** tool as soon as an attempt is made to boot into DaRT:
 
+```ini
+[LaunchApps]
+"%windir%\system32\netstart.exe -network -remount"
+"cmd /C start %windir%\system32\RemoteRecovery.exe -nomessage"
+"%windir%\system32\WaitForConnection.exe"
+"%SYSTEMDRIVE%\sources\recovery\recenv.exe"
+```
 
+When DaRT starts, it creates the file `inv32.xml` in `\Windows\System32\` on the RAM disk. This file contains connection information: IP address, port, and ticket number. You can copy this file to a network share to trigger a Help desk workflow. For example, a custom program can check the network share for connection files, and then create a support ticket or send email notifications.
 
-2. The following is an example of a winpeshl.ini file that is customized to open the **Remote Connection** tool as soon as an attempt is made to boot into DaRT:
+## To run the Remote Connection Viewer at the command prompt
 
-   ```ini
-   [LaunchApps]
-   "%windir%\system32\netstart.exe -network -remount"
-   "cmd /C start %windir%\system32\RemoteRecovery.exe -nomessage"
-   "%windir%\system32\WaitForConnection.exe"
-   "%SYSTEMDRIVE%\sources\recovery\recenv.exe"
-   ```
+To run the **DaRT Remote Connection Viewer** at the command prompt, specify the **DartRemoteViewer.exe** command and use the following parameters:
 
-When DaRT starts, it creates the file inv32.xml in \\Windows\\System32\\ on the RAM disk. This file contains connection information: IP address, port, and ticket number. You can copy this file to a network share to trigger a Help desk workflow. For example, a custom program can check the network share for connection files, and then create a support ticket or send email notifications.
+<table>
+<thead>
+<tr class="header">
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>-ticket=&lt;<em>ticketnumber</em>&gt;</td>
+<td>Where &lt;<em>ticketnumber</em>&gt; is the ticket number, including the dashes, that is generated by Remote Connection.</td>
+</tr>
+<tr class="even">
+<td>-ipaddress=&lt;<em>ipaddress</em>&gt;</td>
+<td>Where &lt;<em>ipaddress</em>&gt; is the IP address that is generated by Remote Connection.</td>
+</tr>
+<tr class="odd">
+<td>-port=&lt;<em>port</em>&gt;</td>
+<td>Where &lt;<em>port</em>&gt; is the port that corresponds to the specified IP address.</td>
+</tr>
+</tbody>
+</table>
 
-**To run the Remote Connection Viewer at the command prompt**
+> [!NOTE]
+> The variables for these parameters are created on the end-user computer and must be provided by the end user.
 
-1.  To run the **DaRT Remote Connection Viewer** at the command prompt, specify the **DartRemoteViewer.exe** command and use the following parameters:
-
-    <table>
-    <colgroup>
-    <col width="50%" />
-    <col width="50%" />
-    </colgroup>
-    <thead>
-    <tr class="header">
-    <th align="left">Parameter</th>
-    <th align="left">Description</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr class="odd">
-    <td align="left"><p>-ticket=&lt;<em>ticketnumber</em>&gt;</p></td>
-    <td align="left"><p>Where &lt;<em>ticketnumber</em>&gt; is the ticket number, including the dashes, that is generated by Remote Connection.</p></td>
-    </tr>
-    <tr class="even">
-    <td align="left"><p>-ipaddress=&lt;<em>ipaddress</em>&gt;</p></td>
-    <td align="left"><p>Where &lt;<em>ipaddress</em>&gt; is the IP address that is generated by Remote Connection.</p></td>
-    </tr>
-    <tr class="odd">
-    <td align="left"><p>-port=&lt;<em>port</em>&gt;</p></td>
-    <td align="left"><p>Where &lt;<em>port</em>&gt; is the port that corresponds to the specified IP address.</p></td>
-    </tr>
-    </tbody>
-    </table>
-
-
-
-~~~
-**Note**  
-The variables for these parameters are created on the end-user computer and must be provided by the end user.
-~~~
-
-
-
-2. If all three parameters are specified and the data is valid, a connection is immediately tried when the program starts. If any parameter is not valid, the program starts as if there were no parameters specified.
+If all three parameters are specified and the data is valid, a connection is immediately tried when the program starts. If any parameter is not valid, the program starts as if there were no parameters specified.
 
 ## Related topics
 
-
-[Operations for DaRT 10](operations-for-dart-10.md)
-
-[Recovering Computers Using DaRT 10](recovering-computers-using-dart-10.md)
-
-
-
-
-
-
-
-
-
+- [Operations for DaRT 10](operations-for-dart-10.md)
+- [Recovering Computers Using DaRT 10](recovering-computers-using-dart-10.md)

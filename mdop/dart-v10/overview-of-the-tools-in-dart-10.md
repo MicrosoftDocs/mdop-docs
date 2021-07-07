@@ -10,12 +10,10 @@ ms.pagetype: mdop
 ms.mktglfcycl: support
 ms.sitesec: library
 ms.prod: w10
-ms.date: 06/16/2016
+ms.date: 04/20/2021
 ---
 
-
 # Overview of the Tools in DaRT 10
-
 
 From the **Diagnostics and Recovery Toolset** window in Microsoft Diagnostics and Recovery Toolset (DaRT) 10, you can start any of the individual tools that you include when you create the DaRT 10 recovery image. For information about how to access the **Diagnostics and Recovery Toolset** window, see [How to Recover Local Computers by Using the DaRT Recovery Image](how-to-recover-local-computers-by-using-the-dart-recovery-image-dart-10.md).
 
@@ -23,17 +21,14 @@ If it is available, you can use the **Solution Wizard** on the **Diagnostics and
 
 ## Exploring the DaRT tools
 
-
 A description of the DaRT 10 tools follows.
 
 ### Computer Management
 
-**Computer Management** is a collection of Windows administrative tools that help you troubleshoot a problem computer. You can use the **Computer Management** tools in DaRT to view system information and event logs, manage disks, list autoruns, and manage services and drivers. The **Computer Management** console is customized to help you diagnose and repair problems that might be preventing the Windows operating system from starting.
+**Computer Management** is a collection of Windows administrative tools that help you troubleshoot a problem computer. You can use the **Computer Management** tools in DaRT to view system information and event logs, manage disks, manage services and device drivers, and list apps that automatically start. The **Computer Management** console is customized to help you diagnose and repair problems that might be preventing the Windows operating system from starting.
 
-**Note**  
-The recovery of dynamic disks with DaRT is not supported.
-
- 
+> [!NOTE]
+> The recovery of dynamic disks with DaRT is not supported.
 
 ### Crash Analyzer
 
@@ -49,32 +44,26 @@ For more information about **Crash Analyzer**, see [Diagnosing System Failures w
 
 **Disk Commander** lets you recover and repair disk partitions or volumes by using one of the following recovery processes:
 
--   Restore the master boot record (MBR)
+- Restore the master boot record (MBR)
 
--   Recover one or more lost volumes
+- Recover one or more lost volumes
 
--   Restore partition tables from **Disk Commander** backup
+- Restore partition tables from **Disk Commander** backup
 
--   Save partition tables to **Disk Commander** backup
+- Save partition tables to **Disk Commander** backup
 
-**Warning**  
-We recommend that you back up a disk before you use **Disk Commander** to repair it. By using **Disk Commander**, you can potentially damage volumes and make them inaccessible. Additionally, changes to one volume can affect other volumes because volumes on a disk share a partition table.
+> [!WARNING]
+> We recommend that you back up a disk before you use **Disk Commander** to repair it. By using **Disk Commander**, you can potentially damage volumes and make them inaccessible. Additionally, changes to one volume can affect other volumes because volumes on a disk share a partition table.
 
- 
-
-**Note**  
-The recovery of dynamic disks with DaRT is not supported.
-
- 
+> [!NOTE]
+> The recovery of dynamic disks with DaRT is not supported.
 
 ### Disk Wipe
 
 You can use **Disk Wipe** to delete all data from a disk or volume, even the data that is left behind after you reformat a hard disk drive. **Disk Wipe** lets you select from either a single-pass overwrite or a four-pass overwrite, which meets current U.S. Department of Defense standards.
 
-**Warning**  
-After wiping a disk or volume, you cannot recover the data. Verify the size and label of a volume before erasing it.
-
- 
+> [!WARNING]
+> After wiping a disk or volume, you cannot recover the data. Verify the size and label of a volume before erasing it.
 
 ### Explorer
 
@@ -84,10 +73,8 @@ The **Explorer** tool lets you browse the computer’s file system and network s
 
 **File Restore** lets you try to restore files that were accidentally deleted or that were too big to fit in the Recycle Bin. **File Restore** is not limited to regular disk volumes, but can find and restore files on lost volumes or on volumes that are encrypted by BitLocker.
 
-**Note**  
-The recovery of dynamic disks with DaRT is not supported.
-
- 
+> [!NOTE]
+> The recovery of dynamic disks with DaRT is not supported.
 
 ### File Search
 
@@ -101,10 +88,8 @@ The **Hotfix Uninstall Wizard** lets you remove hotfixes or service packs from t
 
 We recommend that you uninstall only one hotfix at a time, even though the tool lets you uninstall more than one.
 
-**Important**  
-Programs that were installed or updated after a hotfix was installed might not work correctly after you uninstall a hotfix.
-
- 
+> [!IMPORTANT]
+> Programs that were installed or updated after a hotfix was installed might not work correctly after you uninstall a hotfix.
 
 ### Locksmith
 
@@ -116,10 +101,8 @@ You can use **Locksmith** when the password for a local account, such as the loc
 
 You can use **Registry Editor** to access and change the registry of the Windows operating system that you are analyzing or repairing. This includes adding, removing, and editing keys and values, and importing registry (.reg) files.
 
-**Warning**  
-Serious problems can occur if you change the registry incorrectly by using **Registry Editor**. These problems might require you to reinstall the operating system. Before you make changes to the registry, you should back up any valued data on the computer. Change the registry at your own risk.
-
- 
+> [!WARNING]
+> Serious problems can occur if you change the registry incorrectly by using **Registry Editor**. These problems might require you to reinstall the operating system. Before you make changes to the registry, you should back up any valued data on the computer. Change the registry at your own risk.
 
 ### SFC Scan
 
@@ -135,14 +118,4 @@ When you boot a problem computer into DaRT, it is set to automatically obtain it
 
 ## Related topics
 
-
-[Getting Started with DaRT 10](getting-started-with-dart-10.md)
-
- 
-
- 
-
-
-
-
-
+- [Getting Started with DaRT 10](getting-started-with-dart-10.md)

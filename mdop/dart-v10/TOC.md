@@ -31,9 +31,4 @@
 #### [Security Considerations for DaRT 10](security-considerations-for-dart-10.md)
 #### [DaRT 10 Privacy Statement](dart-10-privacy-statement.md)
 ### [Administering DaRT 10 Using PowerShell](administering-dart-10-using-powershell.md)
-#### [How to Perform DaRT Tasks by Using PowerShell Commands](how-to-perform-dart-tasks-by-using-powershell-commands-dart-10.md)
-#### [How to Use a PowerShell Script to Create the Recovery Image](how-to-use-a-powershell-script-to-create-the-recovery-image-dart-10.md)
 ## [Troubleshooting DaRT 10](troubleshooting-dart-10.md)
-# [DaRT 10](dart-10--c--page.md)
-# [DaRT 10](dart-10-cover-page.md)
-
