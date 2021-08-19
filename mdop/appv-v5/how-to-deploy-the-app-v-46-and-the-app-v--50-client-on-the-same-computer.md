@@ -7,6 +7,7 @@ manager: dansimp
 ms.author: dansimp
 author: dansimp
 ms.date: 06/21/2016
+ms.prod: w10
 ---
 
 # How to Deploy the App-V 4.6 and the App-V 5.0 Client on the Same Computer
